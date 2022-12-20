@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#box{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotate 2s ease-in-out infinite backwards;
+}
+
+@keyframes rotate{
+
+    /* from{
+
+    }
+    to{
+
+    } */
+    /* Bisa gini  atau */
+    0%{
+        transform: rotate(0);
+    }
+
+    100%{
+        transform: rotate(360deg);
+
+    }
+}
+
+@keyframes skew{
+
+    0%{
+        transform: skew(0,0);
+    }
+    100%{
+
+        transform: skew(45deg, 45deg);
+    }
+}
+
+.grid{
+    height: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 8px;
+}
+
+.grid-item{
+    background-color: black;
+    position: relative;
+    overflow: hidden;
+}
+
+.grid-item::before{
+    content:'';
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:0;
+    height:0;
+    border-radius: 50%;
+    background-color: blue;
+    transition: 1s ease-in-out width, 1s ease-in-out height;
+}
+
+/* .grid-item:hover{
+    background-color:blue;
+} */
+
+
+.grid-item:hover::before{
+    width:1000px;
+    height: 1000px;
+}
+.grid-item:active{
+    background-color:purple;
+}
+input[type="text"]{
+    margin: 100px 0;
+}
+
+input[type="text"]:focus{
+    background-color:red;
+}
+.grid-item:nth-child(1){
+    grid-column: span 3;
+}
+
+#box3{
+    width: calc(50vw + 160px);
+    height: 100px;
+    background-color: green;
+}
+
+#box4{
+    height: 100px;
+    width: max(80%, 616px );
+    background-color: violet;
+}
+#box5{
+    height: 100px;
+    width: min(80%, 300px );
+    background-color: aqua;
+}
+#box6{
+    height: 100px;
+    width: clamp(200px, 50%, 400px );
+    background-color: yellow;
+}
+
+@media all and (max-width: 480px){
+    
+    .grid{
+        grid-template-columns: 2fr 1fr;
+    }
+
+}

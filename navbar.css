@@ -1,0 +1,48 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+.container{
+    padding: 1.5rem 6rem;
+}
+#navbar{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+
+}
+#navbar .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D0DCFA;
+}
+
+#navbar .container .nav-link{
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+#navbar .container .nav-link .nav-menu{
+    display: flex;
+    gap: 2rem;
+}
+
+#navbar .container .nav-link .contact-btn{
+    padding: 0.75rem 1.5rem;
+    background-color: blue;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+#navbar .container .nav-link .contact-btn > a{
+   color: white;
+}
